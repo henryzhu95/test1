@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane Doe</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+    }
+
+    main {
+      max-width: 460px;
+      width: 100%;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .avatar svg { width: 52px; height: 52px; fill: #9e9e9e; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+    h1 { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .bio { color: #555; font-size: 0.95rem; margin-bottom: 3rem; }
+
+    h2 { font-size: 1rem; font-weight: 600; margin-bottom: 1.25rem; }
+
+    .form-group { margin-bottom: 1rem; }
+    label { display: block; font-size: 0.8rem; font-weight: 500; color: #444; margin-bottom: 0.3rem; }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+      color: #1a1a1a;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, textarea:focus { outline: none; border-color: #1a1a1a; }
+    textarea { resize: vertical; min-height: 120px; }
+
+    button {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      font-weight: 500;
+      color: #fff;
+      background: #1a1a1a;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover { background: #333; }
+    .success { display: none; color: #2e7d32; font-size: 0.9rem; margin-top: 0.75rem; }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="avatar">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+    </div>
+
+    <h1>Jane Doe</h1>
+    <p class="bio">Designer &amp; developer crafting thoughtful digital experiences. Based in San Francisco, currently building things on the web.</p>
+
+    <section>
+      <h2>Get in touch</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send message</button>
+        <p class="success" id="success-msg">Thanks! Your message has been sent.</p>
+      </form>
+    </section>
+
+    <footer>&copy; 2026 Jane Doe</footer>
+  </main>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.reset();
+      document.getElementById('success-msg').style.display = 'block';
+      setTimeout(function () {
+        document.getElementById('success-msg').style.display = 'none';
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
