@@ -19,7 +19,7 @@
     }
 
     main {
-      max-width: 700px;
+      max-width: 900px;
       width: 100%;
     }
 
@@ -59,34 +59,19 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ── Table ── */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fff;
+    /* ── Card Grid ── */
+    .card-row {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .card-row img {
+      width: 0;
+      flex: 1 1 0;
+      aspect-ratio: 8 / 5;
+      object-fit: cover;
       border-radius: 8px;
-      overflow: hidden;
       border: 1px solid #ddd;
-    }
-
-    th, td {
-      padding: 0.75rem 1rem;
-      text-align: left;
-      font-size: 0.9rem;
-      border-bottom: 1px solid #eee;
-    }
-
-    th {
-      background: #1a1a1a;
-      color: #fff;
-      font-weight: 500;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    td {
-      color: #555;
     }
 
     /* ── Footer ── */
@@ -108,24 +93,12 @@
   </nav>
   <main>
     <h1>Current Credit Cards</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Card Name</th>
-          <th>Issuer</th>
-          <th>Annual Fee</th>
-          <th>Rewards</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-row">
+      <img src="images/venture-x.png" alt="Capital One Venture X">
+      <img src="images/atmos-rewards.png" alt="Atmos Rewards Summit">
+      <img src="images/chase-aeroplan.png" alt="Chase Aeroplan">
+      <img src="images/chase-sapphire-preferred.png" alt="Chase Sapphire Preferred">
+    </div>
 
     <footer>&copy; 2026 Jane Doe</footer>
   </main>
