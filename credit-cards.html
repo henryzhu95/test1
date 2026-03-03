@@ -19,7 +19,7 @@
     }
 
     main {
-      max-width: 900px;
+      max-width: 1350px;
       width: 100%;
     }
 
@@ -62,7 +62,7 @@
     /* ── Card Grid ── */
     .card-row {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .card-row img {
@@ -72,6 +72,41 @@
       object-fit: cover;
       border-radius: 8px;
       border: 1px solid #ddd;
+      transition: transform 0.2s, filter 0.2s;
+    }
+
+    .card-row img:hover {
+      transform: scale(1.05);
+      filter: brightness(0.75);
+    }
+
+    .card-wrapper {
+      position: relative;
+      flex: 1 1 0;
+      width: 0;
+    }
+
+    .card-wrapper img {
+      width: 100%;
+      flex: none;
+    }
+
+    .card-wrapper .overlay-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+
+    .card-wrapper:hover .overlay-label {
+      opacity: 1;
     }
 
     /* ── Footer ── */
@@ -94,10 +129,22 @@
   <main>
     <h1>Current Credit Cards</h1>
     <div class="card-row">
-      <img src="images/venture-x.png" alt="Capital One Venture X">
-      <img src="images/atmos-rewards.png" alt="Atmos Rewards Summit">
-      <img src="images/chase-aeroplan.png" alt="Chase Aeroplan">
-      <img src="images/chase-sapphire-preferred.png" alt="Chase Sapphire Preferred">
+      <div class="card-wrapper">
+        <img src="images/venture-x.png" alt="Capital One Venture X">
+        <span class="overlay-label">Active: Feb 2025</span>
+      </div>
+      <div class="card-wrapper">
+        <img src="images/atmos-rewards.png" alt="Atmos Rewards Summit">
+        <span class="overlay-label">Active: Feb 2026</span>
+      </div>
+      <div class="card-wrapper">
+        <img src="images/chase-aeroplan.png" alt="Chase Aeroplan">
+        <span class="overlay-label">Active: Jan 2023</span>
+      </div>
+      <div class="card-wrapper">
+        <img src="images/chase-sapphire-preferred.png" alt="Chase Sapphire Preferred">
+        <span class="overlay-label">Active: May 2023</span>
+      </div>
     </div>
 
     <footer>&copy; 2026 Jane Doe</footer>
